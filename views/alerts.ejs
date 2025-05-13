@@ -1,0 +1,39 @@
+<section class="canales-container">
+  <h2>Lista de Alertas <a href='/dashboard' class="btn-volver">Volver</a> <button class="btn-limpiar">¡Limpiar!</button></h2>
+  
+  <div class="tabla-wrapper">
+    <table class="tabla-canales">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ID Canal</th>
+          <th>Tipo</th>
+          <th>Mensaje</th>
+          <th>Estado</th>
+          <th>Urgencia</th>
+          <th>Fecha de Creación</th>
+          <th>Última Actualización</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% alertas.forEach(alerta => { %>
+        <tr class="<%= 
+          alerta.type === 'error' ? 'estado-inactivo' :
+          alerta.type === 'advertencia' ? 'estado-mantenimiento' :
+          'estado-activo' 
+        %>">
+          <td><%= alerta.id %></td>
+          <td><%= alerta.canal_id %></td>
+          <td><%= alerta.type %></td>
+          <td><%= alerta.mensaje %></td>
+          <td><%= alerta.estado %></td>
+          <td><%= alerta.urgencia %></td>
+          <td><%= alerta.fecha_creacion.toLocaleString() %></td>
+          <td><%= alerta.fecha_actualizacion.toLocaleString() %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
+<script src="/js/allClear.js"></script>

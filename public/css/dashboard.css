@@ -1,0 +1,133 @@
+.dashboard-container {
+  width:100%;
+  height:100%;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-img {
+  width: 150px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.alerts-section {
+  margin-bottom: 3rem;
+}
+
+.alerts-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.no-alerts {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.alerts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.alert-item {
+  background-color: #f8f8f8;
+  border-left: 5px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.alert-item.error {
+  border-color: #e74c3c;
+}
+
+.alert-item.advertencia {
+  border-color: #f1c40f;
+}
+
+.alert-item.informacion {
+  border-color: #3498db;
+}
+
+.alert-meta {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.benefits-section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.benefits-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.benefit-card {
+  background-color: #f0f4f8;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.benefit-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefits-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,88 @@
+<section class="formulario">
+  <h2><i class="fa-solid fa-user"></i>Actualizar <%=tabla%></h2>
+  <form data-tabla='<%=tabla%>' data-id='<%=data.id%>' id='formularioUsuarioUpdate' class="form-container">
+    <% if(tabla == 'Usuario'){ %>
+    <!-- Campo Nombre -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-user"></i> Nombre</label>
+      <input type="text" id="nombre" required value='<%=data.nombre%>'>
+    </div>
+    
+    <!-- Campo Apellido -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-user-tag"></i> Apellido</label>
+      <input type="text" id="apellido" required value='<%=data.apellido%>'>
+    </div>
+    
+    <!-- Campo Email -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-envelope"></i> Email</label>
+      <input type="email" id="email" required value='<%=data.email%>'>
+    </div>
+    
+    <!-- Campo Contraseña -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-key"></i> Contraseña</label>
+      <input type="password" id="password" required value='<%=data.password%>'>
+    </div>
+    
+    <!-- Campo Rol -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-shield-alt"></i> Rol</label>
+      <select id="rol" required>
+        <option value="soporte">Soporte</option>
+        <option value="admin">Administrador</option>
+        <option value="supervisor">Supervisor</option>
+      </select>
+    </div>
+    
+    <!-- Campo Activo -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-check-circle"></i> Activo</label>
+      <select id="activo" required>
+        <option value="true">Activo</option>
+        <option value="false">Inactivo</option>
+      </select>
+    </div>
+    
+    <!-- Campo Último Acceso (Fecha) -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-calendar-check"></i> Último Acceso</label>
+      <input type="datetime-local" id="ultimo_acceso" value="<%=data.ultimo_acceso%>">
+    </div>
+    <% }else{ %>
+    <div class="form-group">
+      <label><i class="fa-solid fa-signature"></i> Nombre del Canal</label>
+      <input type="text" id="nombre" value='<%=data.nombre%>'>
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-network-wired"></i> Dirección IP</label>
+      <input type="text" id="ip" value='<%=data.ip%>'>
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-align-left"></i> Descripción</label>
+      <input id="descripcion" value='<%=data.descripcion%>'>
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-toggle-on"></i> Estado</label>
+      <select id="estado" required>
+        <option value="activo">Activo</option>
+        <option value="inactivo">Inactivo</option>
+        <option value="mantenimiento">Mantenimiento</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-clock"></i> Latencia (ms)</label>
+      <input type="number" id="latencia" min="0" value='<%=data.latencia%>'>
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-bolt"></i> Umbral de Alerta (ms)</label>
+      <input type="number" id="umbral_alerta" min="100" value='<%=data.umbral_alerta%>'>
+    </div>
+    <% } %>
+    
+    <!-- Botón Enviar -->
+    <button class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Actualizar <%=tabla%></button>
+  </form>
+</section>
+<script src="/js/update.js"></script>

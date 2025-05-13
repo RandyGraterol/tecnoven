@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autenticación</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #3498db, #2c3e50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .auth-container {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 400px;
+      padding: 30px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .auth-icon {
+      font-size: 60px;
+      color: #3498db;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .form {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .form.active {
+      display: flex;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px 12px;
+      background: #f9f9f9;
+    }
+
+    .input-group i.material-icons {
+      color: #888;
+      margin-right: 10px;
+    }
+
+    .input-group input {
+      border: none;
+      outline: none;
+      flex: 1;
+      background: transparent;
+      font-size: 16px;
+    }
+
+    .auth-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .auth-buttons button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .auth-buttons button:hover {
+      background: #2980b9;
+    }
+
+    .form-actions {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .form-actions a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .imgPerfil{
+      width:90px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script src="/js/alertConfig.js"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-icon">
+      <img src="/img/user-interface.png" class="imgPerfil" alt="">
+    </div>
+
+    <!-- Login Form -->
+    <form class="form active" id="form-login">
+      <div class="input-group">
+        <i class="material-icons">person</i>
+        <input type="text" id="usuario" placeholder="Usuario">
+      </div>
+      <div class="input-group">
+        <i class="material-icons">lock</i>
+        <input type="password" id="password" placeholder="Contraseña">
+      </div>
+      <div class="auth-buttons">
+        <button type="submit">Ingresar</button>
+      </div>
+      <div class="form-actions">
+        <a onclick="mostrar('register')">Registrarse</a> | 
+        <a onclick="mostrar('recovery')">¿Olvidaste tu contraseña?</a>
+      </div>
+    </form>
+
+    <!-- Register Form -->
+    <form class="form" id="form-register">
+      <div class="input-group">
+        <i class="material-icons">person_add</i>
+        <input type="text" name="nombre" placeholder="Nombre completo">
+      </div>
+      <div class="input-group">
+        <i class="material-icons">email</i>
+        <input type="email" name="correo" placeholder="Correo electrónico">
+      </div>
+      <div class="input-group">
+        <i class="material-icons">lock</i>
+        <input type="password" name="password" placeholder="Contraseña">
+      </div>
+      <div class="auth-buttons">
+        <button type="submit">Registrar</button>
+      </div>
+      <div class="form-actions">
+        <a onclick="mostrar('login')">¿Ya tienes cuenta? Iniciar sesión</a>
+      </div>
+    </form>
+
+    <!-- Recovery Form -->
+    <form class="form" id="form-recovery">
+      <div class="input-group">
+        <i class="material-icons">email</i>
+        <input type="email" name="correo" placeholder="Correo electrónico">
+      </div>
+      <div class="auth-buttons">
+        <button type="submit">Recuperar</button>
+      </div>
+      <div class="form-actions">
+        <a onclick="mostrar('login')">Volver al inicio</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function mostrar(vista) {
+      document.querySelectorAll('.form').forEach(f => f.classList.remove('active'));
+      document.getElementById('form-' + vista).classList.add('active');
+
+      const icono = {
+        login: 'login',
+        register: 'person_add',
+        recovery: 'lock_open'
+      };
+      document.getElementById('view-icon').textContent = icono[vista];
+    }
+  </script>
+  <script src='/js/fetch3.js'></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<section class="formulario">
+  <h2><i class="fa-solid fa-tv"></i> Registrar Canal</h2>
+  <form id='formulario' class="form-container">
+    <div class="form-group">
+      <label><i class="fa-solid fa-signature"></i> Nombre del Canal</label>
+      <input type="text" id="nombre" required placeholder="Ej: Canal 1">
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-network-wired"></i> Dirección IP</label>
+      <input type="text" id="ip" required placeholder="Ej: 192.168.1.1">
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-align-left"></i> Descripción</label>
+      <textarea id="descripcion" rows="3" placeholder="Opcional..."></textarea>
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-toggle-on"></i> Estado</label>
+      <select id="estado" required>
+        <option value="activo">Activo</option>
+        <option value="inactivo">Inactivo</option>
+        <option value="mantenimiento">Mantenimiento</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-clock"></i> Latencia (ms)</label>
+      <input type="number" id="latencia" min="0" placeholder="Opcional">
+    </div>
+    <div class="form-group">
+      <label><i class="fa-solid fa-bolt"></i> Umbral de Alerta (ms)</label>
+      <input type="number" id="umbral_alerta" min="100" required>
+    </div>
+    <button class="btn-submit"><i class="fa-solid fa-save"></i> Registrar Canal</button>
+  </form>
+</section>
+<script src="/js/fetch.js"></script>

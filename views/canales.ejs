@@ -1,0 +1,42 @@
+<section class="canales-container">
+  <h2>Estado de Canales <a href='/dashboard' class="btn-volver">Volver<a></h2>
+  <div class="tabla-wrapper">
+  <table class="tabla-canales">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>IP</th>
+        <th>Descripcion</th>
+        <th>Estado</th>
+        <th>Última Comprobación</th>
+        <th>Umbral_alerta</th>
+        <th>Latencia (ms)</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% canales.forEach(canal => { %>
+      <tr class="estado-<%= canal.estado %>">
+        <td><%= canal.id %></td>
+        <td><%= canal.nombre %></td>
+        <td><%= canal.ip %></td>
+        <td><%=canal.descripcion%></td>
+        <td><%= canal.estado %></td>
+        <td><%= canal.ultima_comprobacion ? canal.ultima_comprobacion.toLocaleString() : 'N/A' %></td>
+        <td><%=canal.umbral_alerta%></td>
+        <td><%= canal.latencia !== null ? canal.latencia : 'N/A' %></td>
+         <td class="iconos">
+          <a href='/updateCanalGet/<%=canal.id%>'><i title="Actualizar" class="fa-solid fasClass fa-pen-to-square"></i></a> <!-- Icono lápiz para "editar/actualizar" -->
+          <i data-tabla='Canal' data-ruta='/delete/' data-id='<%=canal.id%>' title="Eliminar" class="deleteUser fa-solid fasClass fa-trash"></i>
+          <i title="Verificar estado" data-ip='<%=canal.ip%>' class="statusVerify fasClass fas fa-network-wired"></i>
+
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+</section>
+<script src="/js/delete.js"></script>
+<script src="/js/statusVerify.js"></script>

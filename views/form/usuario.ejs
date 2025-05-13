@@ -1,0 +1,57 @@
+<section class="formulario">
+  <h2><i class="fa-solid fa-user"></i> Registrar Usuario</h2>
+  <form id='formularioUsuario' class="form-container">
+    <!-- Campo Nombre -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-user"></i> Nombre</label>
+      <input type="text" id="nombre" required placeholder="Nombre del usuario">
+    </div>
+    
+    <!-- Campo Apellido -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-user-tag"></i> Apellido</label>
+      <input type="text" id="apellido" required placeholder="Apellido del usuario">
+    </div>
+    
+    <!-- Campo Email -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-envelope"></i> Email</label>
+      <input type="email" id="email" required placeholder="Correo electrónico">
+    </div>
+    
+    <!-- Campo Contraseña -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-key"></i> Contraseña</label>
+      <input type="password" id="password" required placeholder="Contraseña (mín. 8 caracteres)">
+    </div>
+    
+    <!-- Campo Rol -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-shield-alt"></i> Rol</label>
+      <select id="rol" required>
+        <option value="soporte">Soporte</option>
+        <option value="admin">Administrador</option>
+        <option value="supervisor">Supervisor</option>
+      </select>
+    </div>
+    
+    <!-- Campo Activo -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-check-circle"></i> Activo</label>
+      <select id="activo" required>
+        <option value="true">Activo</option>
+        <option value="false">Inactivo</option>
+      </select>
+    </div>
+    
+    <!-- Campo Último Acceso (Fecha) -->
+    <div class="form-group">
+      <label><i class="fa-solid fa-calendar-check"></i> Último Acceso</label>
+      <input type="datetime-local" id="ultimo_acceso" placeholder="Último acceso">
+    </div>
+    
+    <!-- Botón Enviar -->
+    <button class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Registrar Usuario</button>
+  </form>
+</section>
+<script src="/js/fetch2.js"></script>

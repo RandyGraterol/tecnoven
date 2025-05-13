@@ -1,0 +1,44 @@
+<section class="canales-container">
+  <h2>Lista de Usuarios <a href='/dashboard' class="btn-volver">Volver</a></h2>
+  <div class="tabla-wrapper">
+  <table class="tabla-canales">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Rol</th>
+        <th>Último Acceso</th>
+        <th>Activo</th>
+        <th>Fecha de Creación</th>
+        <th>Última Actualización</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(usuario => { %>
+      <tr class="estado-<%= usuario.activo ? 'activo' : 'inactivo' %>">
+        <td><%= usuario.id %></td>
+        <td><%= usuario.nombre %></td>
+        <td><%= usuario.apellido %></td>
+        <td><%= usuario.email %></td>
+        <td><%= usuario.password %></td>
+        <td><%= usuario.rol %></td>
+        <td><%= usuario.ultimo_acceso ? usuario.ultimo_acceso.toLocaleString() : 'N/A' %></td>
+        <td><%= usuario.activo ? 'Sí' : 'No' %></td>
+        <td><%= usuario.fecha_creacion.toLocaleString() %></td>
+        <td><%= usuario.fecha_actualizacion.toLocaleString() %></td>
+        <td class="iconos">
+          <a href='/updateUserGet/<%=usuario.id%>'><i title="Actualizar" class="fa-solid fasClass fa-pen-to-square"></i></a> <!-- Icono lápiz para "editar/actualizar" -->
+          <i data-tabla='Usuario' data-ruta='/delete/' data-id='<%=usuario.id%>' title="Eliminar" class="deleteUser fa-solid fasClass fa-trash"></i> <!-- Icono de papelera para "eliminar" -->
+
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+</section>
+<script src="/js/delete.js"></script>

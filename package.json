@@ -1,0 +1,33 @@
+{
+  "name": "tecnoven",
+  "version": "1.0.0",
+  "description": "PROGRAMADOR BACKEND WEB FULL STACK JAVASCRIPTS.\r /canal-monitor\r │\r ├── /config               # Configuración general\r │   └── database.js       # Configuración de Sequelize y SQLite\r │   └── mailer.js         # Configuración de Nodemailer\r │\r ├── /controllers          # Lógica del sistema\r │   └── monitorController.js\r │\r ├── /models               # Definición de modelos Sequelize\r │   └── index.js\r │   └── canal.js\r │   └── alerta.js\r │\r ├── /routes\r │   └── monitorRoutes.js\r │\r ├── /views                # Plantillas EJS\r │   └── layout.ejs\r │   └── index.ejs\r │   └── alertas.ejs\r │\r ├── /public               # Archivos estáticos\r │   └── css/\r │\r ├── /utils                # Funciones auxiliares\r │   └── pingHelper.js\r │\r ├── app.js                # Punto de entrada\r ├── package.json\r └── .env",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RandyGraterol/tecnoven.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RandyGraterol/tecnoven/issues"
+  },
+  "homepage": "https://github.com/RandyGraterol/tecnoven#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "nodemailer": "^7.0.2",
+    "ping": "^0.4.4",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  }
+}
